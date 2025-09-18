@@ -1,0 +1,38 @@
+{
+  "name": "sbatch-shell-highlighting",
+  "displayName": "Sbatch Shell Highlighting",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "sbatch",
+        "aliases": [
+          "sbatch",
+          "sbatch"
+        ],
+        "extensions": [
+          ".sbatch",
+          ".slurm",
+          ".sjob",
+          ".job"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "sbatch",
+        "scopeName": "source.sbatch",
+        "path": "./syntaxes/sbatch.tmLanguage.json"
+      }
+    ]
+  },
+  "license": "MIT"
+}

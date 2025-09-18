@@ -1,0 +1,77 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "sbatch",
+	"patterns": [
+		{
+			"include": "#sbatch-directive"
+		},
+		{
+			"include": "#sbatch-keywords"
+		},
+		{
+			"include": "#sbatch-strings"
+		},
+		{
+			"include": "source.shell"
+		}
+	],
+	"repository": {
+		"sbatch-directive": {
+			"name": "meta.sbatch.directive.slurm",
+			"begin": "^(#SBATCH)\\s+(--[\\w-]+)(\\s*=\\s*|\\s+)?",
+			"end": "(?=$)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.sbatch.slurm"
+				},
+				"2": {
+					"name": "variable.parameter.sbatch.slurm"
+				},
+				"3": {
+					"name": "keyword.operator.assignment.slurm"
+				}
+			},
+			"patterns": [
+				{
+					"name": "string.quoted.double.sbatch.slurm",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.sbatch.slurm",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "comment.line.number-sign.sbatch.slurm",
+					"match": "\\s+#.*$"
+				},
+				{
+					"match": "[^\\s#\"]+",
+					"name": "string.unquoted.value.sbatch.slurm"
+				}
+			]
+		},
+		"sbatch-keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.sbatch.option.slurm",
+					"match": "\\b(nodes|ntasks|cpus-per-task|time|output|error|job-name|partition|gres|array|mem|mem-per-cpu|qos|account)\\b"
+				}
+			]
+		},
+		"sbatch-strings": {
+			"name": "string.quoted.double.sbatch.slurm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sbatch.slurm",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.sbatch"
+}
