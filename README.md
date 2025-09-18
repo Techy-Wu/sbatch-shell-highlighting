@@ -1,4 +1,4 @@
-# Slurm Syntax Highlighting for VS Code
+# Sbatch Syntax Highlighting for VS Code
 
 Precise syntax highlighting for Slurm job scripts in Visual Studio Code. 
 

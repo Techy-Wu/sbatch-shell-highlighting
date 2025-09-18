@@ -1,7 +1,7 @@
 {
   "name": "sbatch-shell-highlighting",
   "displayName": "Sbatch Shell Highlighting",
-  "description": "",
+  "description": "Precise syntax highlighting for Slurm job scripts in VS Code. Supports .sbatch, .slurm, .sjob, and .job file extensions.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.104.0"
@@ -34,5 +34,10 @@
       }
     ]
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Techy-Wu/sbatch-shell-highlighting"
+  },
+  "publisher": "Techy Wu"
 }
