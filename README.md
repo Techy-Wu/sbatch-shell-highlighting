@@ -36,6 +36,8 @@ If your VS Code does not automatically associate these files with the extension,
 
 ## 📦 Supported Syntax
 
+Demo sbatch codes:
+
 ```bash
 #!/bin/bash
 #
@@ -49,7 +51,9 @@ module load python
 srun python my_script.py
 ```
 
-demo:![demo img](./img/demo_image.png)
+Demo after rendering:
+
+![demo img](./img/demo_image.png)
 
 ## 📄 License
 
